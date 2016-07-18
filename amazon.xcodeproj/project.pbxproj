@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3EE648D51D3D541100433C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE648D41D3D541100433C1B /* AppDelegate.swift */; };
+		3EE648D71D3D541100433C1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE648D61D3D541100433C1B /* ViewController.swift */; };
+		3EE648DA1D3D541100433C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EE648D81D3D541100433C1B /* Main.storyboard */; };
+		3EE648DC1D3D541100433C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EE648DB1D3D541100433C1B /* Assets.xcassets */; };
+		3EE648DF1D3D541100433C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EE648DD1D3D541100433C1B /* LaunchScreen.storyboard */; };
+		3EE648EA1D3D541100433C1B /* amazonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE648E91D3D541100433C1B /* amazonTests.swift */; };
+		3EE648F51D3D541100433C1B /* amazonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE648F41D3D541100433C1B /* amazonUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3EE648E61D3D541100433C1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EE648C91D3D541100433C1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EE648D01D3D541100433C1B;
+			remoteInfo = amazon;
+		};
+		3EE648F11D3D541100433C1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EE648C91D3D541100433C1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3EE648D01D3D541100433C1B;
+			remoteInfo = amazon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3EE648D11D3D541100433C1B /* amazon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amazon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EE648D41D3D541100433C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3EE648D61D3D541100433C1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3EE648D91D3D541100433C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3EE648DB1D3D541100433C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3EE648DE1D3D541100433C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3EE648E01D3D541100433C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EE648E51D3D541100433C1B /* amazonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = amazonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EE648E91D3D541100433C1B /* amazonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amazonTests.swift; sourceTree = "<group>"; };
+		3EE648EB1D3D541100433C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EE648F01D3D541100433C1B /* amazonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = amazonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EE648F41D3D541100433C1B /* amazonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amazonUITests.swift; sourceTree = "<group>"; };
+		3EE648F61D3D541100433C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3EE648CE1D3D541100433C1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EE648E21D3D541100433C1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EE648ED1D3D541100433C1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3EE648C81D3D541100433C1B = {
+			isa = PBXGroup;
+			children = (
+				3EE648D31D3D541100433C1B /* amazon */,
+				3EE648E81D3D541100433C1B /* amazonTests */,
+				3EE648F31D3D541100433C1B /* amazonUITests */,
+				3EE648D21D3D541100433C1B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3EE648D21D3D541100433C1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EE648D11D3D541100433C1B /* amazon.app */,
+				3EE648E51D3D541100433C1B /* amazonTests.xctest */,
+				3EE648F01D3D541100433C1B /* amazonUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EE648D31D3D541100433C1B /* amazon */ = {
+			isa = PBXGroup;
+			children = (
+				3EE648D41D3D541100433C1B /* AppDelegate.swift */,
+				3EE648D61D3D541100433C1B /* ViewController.swift */,
+				3EE648D81D3D541100433C1B /* Main.storyboard */,
+				3EE648DB1D3D541100433C1B /* Assets.xcassets */,
+				3EE648DD1D3D541100433C1B /* LaunchScreen.storyboard */,
+				3EE648E01D3D541100433C1B /* Info.plist */,
+			);
+			path = amazon;
+			sourceTree = "<group>";
+		};
+		3EE648E81D3D541100433C1B /* amazonTests */ = {
+			isa = PBXGroup;
+			children = (
+				3EE648E91D3D541100433C1B /* amazonTests.swift */,
+				3EE648EB1D3D541100433C1B /* Info.plist */,
+			);
+			path = amazonTests;
+			sourceTree = "<group>";
+		};
+		3EE648F31D3D541100433C1B /* amazonUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3EE648F41D3D541100433C1B /* amazonUITests.swift */,
+				3EE648F61D3D541100433C1B /* Info.plist */,
+			);
+			path = amazonUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3EE648D01D3D541100433C1B /* amazon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EE648F91D3D541100433C1B /* Build configuration list for PBXNativeTarget "amazon" */;
+			buildPhases = (
+				3EE648CD1D3D541100433C1B /* Sources */,
+				3EE648CE1D3D541100433C1B /* Frameworks */,
+				3EE648CF1D3D541100433C1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = amazon;
+			productName = amazon;
+			productReference = 3EE648D11D3D541100433C1B /* amazon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3EE648E41D3D541100433C1B /* amazonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EE648FC1D3D541100433C1B /* Build configuration list for PBXNativeTarget "amazonTests" */;
+			buildPhases = (
+				3EE648E11D3D541100433C1B /* Sources */,
+				3EE648E21D3D541100433C1B /* Frameworks */,
+				3EE648E31D3D541100433C1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EE648E71D3D541100433C1B /* PBXTargetDependency */,
+			);
+			name = amazonTests;
+			productName = amazonTests;
+			productReference = 3EE648E51D3D541100433C1B /* amazonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3EE648EF1D3D541100433C1B /* amazonUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EE648FF1D3D541100433C1B /* Build configuration list for PBXNativeTarget "amazonUITests" */;
+			buildPhases = (
+				3EE648EC1D3D541100433C1B /* Sources */,
+				3EE648ED1D3D541100433C1B /* Frameworks */,
+				3EE648EE1D3D541100433C1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EE648F21D3D541100433C1B /* PBXTargetDependency */,
+			);
+			name = amazonUITests;
+			productName = amazonUITests;
+			productReference = 3EE648F01D3D541100433C1B /* amazonUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3EE648C91D3D541100433C1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "O'Brien, Patrick (Synchrony Financial)";
+				TargetAttributes = {
+					3EE648D01D3D541100433C1B = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					3EE648E41D3D541100433C1B = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 3EE648D01D3D541100433C1B;
+					};
+					3EE648EF1D3D541100433C1B = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 3EE648D01D3D541100433C1B;
+					};
+				};
+			};
+			buildConfigurationList = 3EE648CC1D3D541100433C1B /* Build configuration list for PBXProject "amazon" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3EE648C81D3D541100433C1B;
+			productRefGroup = 3EE648D21D3D541100433C1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EE648D01D3D541100433C1B /* amazon */,
+				3EE648E41D3D541100433C1B /* amazonTests */,
+				3EE648EF1D3D541100433C1B /* amazonUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3EE648CF1D3D541100433C1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EE648DF1D3D541100433C1B /* LaunchScreen.storyboard in Resources */,
+				3EE648DC1D3D541100433C1B /* Assets.xcassets in Resources */,
+				3EE648DA1D3D541100433C1B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EE648E31D3D541100433C1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EE648EE1D3D541100433C1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EE648CD1D3D541100433C1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EE648D71D3D541100433C1B /* ViewController.swift in Sources */,
+				3EE648D51D3D541100433C1B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EE648E11D3D541100433C1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EE648EA1D3D541100433C1B /* amazonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3EE648EC1D3D541100433C1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EE648F51D3D541100433C1B /* amazonUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3EE648E71D3D541100433C1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3EE648D01D3D541100433C1B /* amazon */;
+			targetProxy = 3EE648E61D3D541100433C1B /* PBXContainerItemProxy */;
+		};
+		3EE648F21D3D541100433C1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3EE648D01D3D541100433C1B /* amazon */;
+			targetProxy = 3EE648F11D3D541100433C1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3EE648D81D3D541100433C1B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EE648D91D3D541100433C1B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3EE648DD1D3D541100433C1B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EE648DE1D3D541100433C1B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3EE648F71D3D541100433C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3EE648F81D3D541100433C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3EE648FA1D3D541100433C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = amazon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IS.amazon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3EE648FB1D3D541100433C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = amazon/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IS.amazon;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3EE648FD1D3D541100433C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = amazonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IS.amazonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/amazon.app/amazon";
+			};
+			name = Debug;
+		};
+		3EE648FE1D3D541100433C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = amazonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IS.amazonTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/amazon.app/amazon";
+			};
+			name = Release;
+		};
+		3EE649001D3D541100433C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = amazonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IS.amazonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = amazon;
+			};
+			name = Debug;
+		};
+		3EE649011D3D541100433C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = amazonUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = IS.amazonUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = amazon;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3EE648CC1D3D541100433C1B /* Build configuration list for PBXProject "amazon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EE648F71D3D541100433C1B /* Debug */,
+				3EE648F81D3D541100433C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EE648F91D3D541100433C1B /* Build configuration list for PBXNativeTarget "amazon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EE648FA1D3D541100433C1B /* Debug */,
+				3EE648FB1D3D541100433C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3EE648FC1D3D541100433C1B /* Build configuration list for PBXNativeTarget "amazonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EE648FD1D3D541100433C1B /* Debug */,
+				3EE648FE1D3D541100433C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3EE648FF1D3D541100433C1B /* Build configuration list for PBXNativeTarget "amazonUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EE649001D3D541100433C1B /* Debug */,
+				3EE649011D3D541100433C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3EE648C91D3D541100433C1B /* Project object */;
+}
