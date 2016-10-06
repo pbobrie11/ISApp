@@ -1,0 +1,28 @@
+PODS:
+  - AWSCognito (2.4.5):
+    - AWSCore (= 2.4.5)
+  - AWSCognitoIdentityProvider (2.4.5):
+    - AWSCore (= 2.4.5)
+  - AWSCore (2.4.5)
+  - AWSDynamoDB (2.4.5):
+    - AWSCore (= 2.4.5)
+  - AWSLambda (2.4.5):
+    - AWSCore (= 2.4.5)
+
+DEPENDENCIES:
+  - AWSCognito
+  - AWSCognitoIdentityProvider
+  - AWSCore
+  - AWSDynamoDB
+  - AWSLambda
+
+SPEC CHECKSUMS:
+  AWSCognito: 96e1762404831ffb87f67c87a5ee68fde543bb69
+  AWSCognitoIdentityProvider: 3085d7d30b2bead2dc97efe286e02bda1a6a8325
+  AWSCore: 2f356385bcea9b81ea47f9be0228c71697d9597d
+  AWSDynamoDB: 284308e0f5164aa8178dd06505410390deb44a49
+  AWSLambda: 295ed268e30556aa55b13b01495a1d47593af178
+
+PODFILE CHECKSUM: 8ded3e53058e8ceac4c097d7d8f16481f1f45f5f
+
+COCOAPODS: 1.0.1

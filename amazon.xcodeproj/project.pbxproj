@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0391991D931D3C00E5A3E3 /* myEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0391981D931D3C00E5A3E3 /* myEventsTableViewCell.swift */; };
+		3E229F181D46A6020072F673 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E229F171D46A6020072F673 /* EventsTableViewController.swift */; };
+		3E229F1A1D46A78B0072F673 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E229F191D46A78B0072F673 /* EventTableViewCell.swift */; };
+		3E26DAF01D6E28480001CF65 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E26DAEF1D6E28480001CF65 /* DetailViewController.swift */; };
+		3E72D7B91D5D10B6009F74BF /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E72D7B81D5D10B6009F74BF /* InfoTableViewController.swift */; };
+		3E836FE11D7476C500E3633E /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E836FE01D7476C500E3633E /* HomepageViewController.swift */; };
+		3E97901D1DA2D2FF00C840FA /* UnownedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97901C1DA2D2FF00C840FA /* UnownedTableViewController.swift */; };
+		3E97901F1DA2D47A00C840FA /* unownedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E97901E1DA2D47A00C840FA /* unownedTableViewCell.swift */; };
+		3E9790211DA2E37300C840FA /* TabHomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9790201DA2E37300C840FA /* TabHomepageViewController.swift */; };
+		3E9790231DA3EFEA00C840FA /* CustomNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9790221DA3EFEA00C840FA /* CustomNavViewController.swift */; };
+		3EC0E91C1DA29E63004A0025 /* DeviceCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EC0E91B1DA29E63004A0025 /* DeviceCheck.swift */; };
+		3EDDDA8D1D74C7300000491E /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDDA8C1D74C7300000491E /* InfoTableViewCell.swift */; };
+		3EDDDA8F1D75C1AC0000491E /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDDA8E1D75C1AC0000491E /* EditEventViewController.swift */; };
+		3EDDDA911D7753A60000491E /* AddReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDDA901D7753A60000491E /* AddReminderViewController.swift */; };
+		3EDDDA931D90342F0000491E /* colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDDA921D90342F0000491E /* colors.swift */; };
+		3EDDDA951D9077F40000491E /* UpcomingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EDDDA941D9077F40000491E /* UpcomingTableViewCell.swift */; };
 		3EE648D51D3D541100433C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE648D41D3D541100433C1B /* AppDelegate.swift */; };
 		3EE648D71D3D541100433C1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE648D61D3D541100433C1B /* ViewController.swift */; };
 		3EE648DA1D3D541100433C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EE648D81D3D541100433C1B /* Main.storyboard */; };
@@ -14,6 +30,11 @@
 		3EE648DF1D3D541100433C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EE648DD1D3D541100433C1B /* LaunchScreen.storyboard */; };
 		3EE648EA1D3D541100433C1B /* amazonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE648E91D3D541100433C1B /* amazonTests.swift */; };
 		3EE648F51D3D541100433C1B /* amazonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE648F41D3D541100433C1B /* amazonUITests.swift */; };
+		3EE649061D3D6E2D00433C1B /* DynamoDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE649051D3D6E2D00433C1B /* DynamoDBManager.swift */; };
+		3EE6490A1D40148200433C1B /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE649091D40148200433C1B /* AddViewController.swift */; };
+		3EE6490C1D414CEA00433C1B /* pullObjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6490B1D414CEA00433C1B /* pullObjectViewController.swift */; };
+		3EE6490E1D4297A300433C1B /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE6490D1D4297A300433C1B /* EventsViewController.swift */; };
+		EEE9C0EE0C2CFAA21BC8633C /* Pods_amazon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB98BB8E80662AD3CE56E833 /* Pods_amazon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +55,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		080AF937D1C8E9532A094FDA /* Pods-amazon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amazon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-amazon/Pods-amazon.debug.xcconfig"; sourceTree = "<group>"; };
+		3E0391981D931D3C00E5A3E3 /* myEventsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myEventsTableViewCell.swift; sourceTree = "<group>"; };
+		3E229F171D46A6020072F673 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		3E229F191D46A78B0072F673 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		3E26DAEF1D6E28480001CF65 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3E72D7B81D5D10B6009F74BF /* InfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
+		3E836FE01D7476C500E3633E /* HomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
+		3E97901C1DA2D2FF00C840FA /* UnownedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnownedTableViewController.swift; sourceTree = "<group>"; };
+		3E97901E1DA2D47A00C840FA /* unownedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = unownedTableViewCell.swift; sourceTree = "<group>"; };
+		3E9790201DA2E37300C840FA /* TabHomepageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabHomepageViewController.swift; sourceTree = "<group>"; };
+		3E9790221DA3EFEA00C840FA /* CustomNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavViewController.swift; sourceTree = "<group>"; };
+		3EC0E91B1DA29E63004A0025 /* DeviceCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCheck.swift; sourceTree = "<group>"; };
+		3EDDDA8C1D74C7300000491E /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		3EDDDA8E1D75C1AC0000491E /* EditEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
+		3EDDDA901D7753A60000491E /* AddReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderViewController.swift; sourceTree = "<group>"; };
+		3EDDDA921D90342F0000491E /* colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = colors.swift; sourceTree = "<group>"; };
+		3EDDDA941D9077F40000491E /* UpcomingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingTableViewCell.swift; sourceTree = "<group>"; };
 		3EE648D11D3D541100433C1B /* amazon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = amazon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE648D41D3D541100433C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EE648D61D3D541100433C1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +85,13 @@
 		3EE648F01D3D541100433C1B /* amazonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = amazonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE648F41D3D541100433C1B /* amazonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amazonUITests.swift; sourceTree = "<group>"; };
 		3EE648F61D3D541100433C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EE649021D3D657E00433C1B /* amazon-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "amazon-Bridging-Header.h"; sourceTree = "<group>"; };
+		3EE649051D3D6E2D00433C1B /* DynamoDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamoDBManager.swift; sourceTree = "<group>"; };
+		3EE649091D40148200433C1B /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		3EE6490B1D414CEA00433C1B /* pullObjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pullObjectViewController.swift; sourceTree = "<group>"; };
+		3EE6490D1D4297A300433C1B /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		6BEF75396E74D7F5E8880EEC /* Pods-amazon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-amazon.release.xcconfig"; path = "Pods/Target Support Files/Pods-amazon/Pods-amazon.release.xcconfig"; sourceTree = "<group>"; };
+		EB98BB8E80662AD3CE56E833 /* Pods_amazon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_amazon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEE9C0EE0C2CFAA21BC8633C /* Pods_amazon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +120,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21EEFA263274F51D3153579C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				080AF937D1C8E9532A094FDA /* Pods-amazon.debug.xcconfig */,
+				6BEF75396E74D7F5E8880EEC /* Pods-amazon.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3EE648C81D3D541100433C1B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +136,8 @@
 				3EE648E81D3D541100433C1B /* amazonTests */,
 				3EE648F31D3D541100433C1B /* amazonUITests */,
 				3EE648D21D3D541100433C1B /* Products */,
+				21EEFA263274F51D3153579C /* Pods */,
+				A5D09B9379CE4BE63E3F2719 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +155,32 @@
 			isa = PBXGroup;
 			children = (
 				3EE648D41D3D541100433C1B /* AppDelegate.swift */,
+				3EDDDA921D90342F0000491E /* colors.swift */,
+				3EE649051D3D6E2D00433C1B /* DynamoDBManager.swift */,
 				3EE648D61D3D541100433C1B /* ViewController.swift */,
+				3EC0E91B1DA29E63004A0025 /* DeviceCheck.swift */,
+				3EDDDA8E1D75C1AC0000491E /* EditEventViewController.swift */,
+				3E72D7B81D5D10B6009F74BF /* InfoTableViewController.swift */,
+				3E836FE01D7476C500E3633E /* HomepageViewController.swift */,
+				3E97901C1DA2D2FF00C840FA /* UnownedTableViewController.swift */,
+				3E97901E1DA2D47A00C840FA /* unownedTableViewCell.swift */,
+				3EDDDA941D9077F40000491E /* UpcomingTableViewCell.swift */,
+				3EE6490B1D414CEA00433C1B /* pullObjectViewController.swift */,
+				3E9790221DA3EFEA00C840FA /* CustomNavViewController.swift */,
+				3E229F171D46A6020072F673 /* EventsTableViewController.swift */,
+				3E229F191D46A78B0072F673 /* EventTableViewCell.swift */,
+				3E0391981D931D3C00E5A3E3 /* myEventsTableViewCell.swift */,
+				3E26DAEF1D6E28480001CF65 /* DetailViewController.swift */,
+				3EE6490D1D4297A300433C1B /* EventsViewController.swift */,
+				3EDDDA901D7753A60000491E /* AddReminderViewController.swift */,
+				3EE649091D40148200433C1B /* AddViewController.swift */,
+				3EDDDA8C1D74C7300000491E /* InfoTableViewCell.swift */,
 				3EE648D81D3D541100433C1B /* Main.storyboard */,
+				3E9790201DA2E37300C840FA /* TabHomepageViewController.swift */,
 				3EE648DB1D3D541100433C1B /* Assets.xcassets */,
 				3EE648DD1D3D541100433C1B /* LaunchScreen.storyboard */,
 				3EE648E01D3D541100433C1B /* Info.plist */,
+				3EE649021D3D657E00433C1B /* amazon-Bridging-Header.h */,
 			);
 			path = amazon;
 			sourceTree = "<group>";
@@ -125,6 +203,14 @@
 			path = amazonUITests;
 			sourceTree = "<group>";
 		};
+		A5D09B9379CE4BE63E3F2719 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB98BB8E80662AD3CE56E833 /* Pods_amazon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +218,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3EE648F91D3D541100433C1B /* Build configuration list for PBXNativeTarget "amazon" */;
 			buildPhases = (
+				3BFB8EFDD42AE42BD5E2F7AC /* [CP] Check Pods Manifest.lock */,
 				3EE648CD1D3D541100433C1B /* Sources */,
 				3EE648CE1D3D541100433C1B /* Frameworks */,
 				3EE648CF1D3D541100433C1B /* Resources */,
+				11C633919CF60A928BD4D759 /* [CP] Embed Pods Frameworks */,
+				C52838637AA86E2C1059DA42 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,13 +340,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11C633919CF60A928BD4D759 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-amazon/Pods-amazon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BFB8EFDD42AE42BD5E2F7AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C52838637AA86E2C1059DA42 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-amazon/Pods-amazon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3EE648CD1D3D541100433C1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E26DAF01D6E28480001CF65 /* DetailViewController.swift in Sources */,
+				3EDDDA931D90342F0000491E /* colors.swift in Sources */,
+				3EDDDA8F1D75C1AC0000491E /* EditEventViewController.swift in Sources */,
+				3E0391991D931D3C00E5A3E3 /* myEventsTableViewCell.swift in Sources */,
+				3E229F1A1D46A78B0072F673 /* EventTableViewCell.swift in Sources */,
+				3E836FE11D7476C500E3633E /* HomepageViewController.swift in Sources */,
+				3E72D7B91D5D10B6009F74BF /* InfoTableViewController.swift in Sources */,
+				3EE6490C1D414CEA00433C1B /* pullObjectViewController.swift in Sources */,
+				3E97901F1DA2D47A00C840FA /* unownedTableViewCell.swift in Sources */,
+				3E97901D1DA2D2FF00C840FA /* UnownedTableViewController.swift in Sources */,
+				3EC0E91C1DA29E63004A0025 /* DeviceCheck.swift in Sources */,
+				3E229F181D46A6020072F673 /* EventsTableViewController.swift in Sources */,
+				3EE6490A1D40148200433C1B /* AddViewController.swift in Sources */,
+				3E9790211DA2E37300C840FA /* TabHomepageViewController.swift in Sources */,
 				3EE648D71D3D541100433C1B /* ViewController.swift in Sources */,
+				3EE649061D3D6E2D00433C1B /* DynamoDBManager.swift in Sources */,
+				3EDDDA951D9077F40000491E /* UpcomingTableViewCell.swift in Sources */,
+				3EDDDA8D1D74C7300000491E /* InfoTableViewCell.swift in Sources */,
 				3EE648D51D3D541100433C1B /* AppDelegate.swift in Sources */,
+				3E9790231DA3EFEA00C840FA /* CustomNavViewController.swift in Sources */,
+				3EDDDA911D7753A60000491E /* AddReminderViewController.swift in Sources */,
+				3EE6490E1D4297A300433C1B /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,23 +556,30 @@
 		};
 		3EE648FA1D3D541100433C1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 080AF937D1C8E9532A094FDA /* Pods-amazon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = amazon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IS.amazon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "amazon/amazon-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		3EE648FB1D3D541100433C1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BEF75396E74D7F5E8880EEC /* Pods-amazon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = amazon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = IS.amazon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "amazon/amazon-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -484,6 +648,7 @@
 				3EE648FB1D3D541100433C1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3EE648FC1D3D541100433C1B /* Build configuration list for PBXNativeTarget "amazonTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +657,7 @@
 				3EE648FE1D3D541100433C1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3EE648FF1D3D541100433C1B /* Build configuration list for PBXNativeTarget "amazonUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +666,7 @@
 				3EE649011D3D541100433C1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
