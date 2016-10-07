@@ -22,15 +22,19 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var lblEventsAndReminders: UILabel!
     @IBOutlet weak var lblUpcomingEvents: UILabel!
     
+    
+    @IBOutlet weak var btnUser: UIButton!
+    
     //constraints to set and alter based on device / whether there is an unowned event to sign up for
     @IBOutlet weak var myEventsHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var upcomingTableHeight: NSLayoutConstraint!
     @IBOutlet weak var unownedAlertViewHeight: NSLayoutConstraint!
     @IBOutlet weak var stackviewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var heightToAlertConstraint: NSLayoutConstraint!
 
     //@IBOutlet weak var exclamationImageHeight: NSLayoutConstraint!
     //@IBOutlet weak var lblAlertHeight: NSLayoutConstraint!
-    @IBOutlet weak var heightToAlertConstraint: NSLayoutConstraint!
+    
     
     //components within alert view
     //@IBOutlet weak var alertImageView: UIImageView!
@@ -55,17 +59,21 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
         checkPhoneModel()
         setEventsAndReminders()
         checkTime()
-        //retrieveUnownedObjects()
-        //setFakeUpcoming()
-        setFakeUnowned()
-        parseUnowned()
+        retrieveUnownedObjects()
     
         setStyle()
+        
+        //keep view hidden
+        unownedAlertViewHeight.constant = 0
+        stackviewHeightConstraint.constant = 0
+        heightToAlertConstraint.constant = 7
         
         upcomingTableView.reloadData()
         eventsAndRemindersTableView.reloadData()
         
         tapRecognizer.addTarget(self, action: "segueToUnowned:")
+        
+       btnUser.addTarget(self, action: "askForName", forControlEvents: .TouchUpInside)
     
     }
     
@@ -87,17 +95,10 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
 
     }
     
-    func setFakeUnowned() {
-        var newUnowned = Event()
-        newUnowned.startDate = 1475744400
-        newUnowned.endDate = 1475744400
-        newUnowned.event = "Bolt"
-        unowned.append(newUnowned)
-    }
-    
     func setStyle() {
         //outline for the alert for unowned events
        ////////////////////////////////// unownedAlertViewHeight.constant = 0
+        alertView.layer.cornerRadius = 5
         alertView.layer.borderWidth = 1
         alertView.layer.borderColor = UIColor.synchronyGold().CGColor
         
@@ -156,6 +157,7 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        checkName()
         
         let amazon = amazonDb()
         
@@ -221,6 +223,7 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
             var genericCell = UITableViewCell()
             return genericCell
         }
+        
     }
     
     func checkSetScroll() {
@@ -273,13 +276,6 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
             }
                     eventsAndRemindersTableView.reloadData()
     }
-    
-    func setFakeUpcoming() {
-        let fakeEvent = Event()
-        fakeEvent.event = "Volunteer Event"
-        //fakeEvent.startDate = "Sep 22, 2016"
-        nextEvents.append(fakeEvent)
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -293,7 +289,7 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
         let currentUnix = amazon.getCurrentUnixTime()
         let futureUnix = amazon.getWeekFromNowUnixTime(date)
         
-        //retrieveUpcomingObject(currentUnix, end: futureUnix)
+        retrieveUpcomingObject(currentUnix, end: futureUnix)
     }
     
     func retrieveUpcomingObject (start: Double, end: Double) {
@@ -361,22 +357,22 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
                 output = task.result as! AWSDynamoDBPaginatedOutput
                 
                 //parse response.
-               // self.parseUnowned(task)
+                self.parseUnowned(task)
                 
             }
             return nil
         })
     }
     
-    func parseUnowned() {
-//        let tableRow = output.result as! AWSDynamoDBPaginatedOutput
-//        
-//        var response = tableRow.items
-//
-//            for (items) in tableRow.items {
-//                var newEvent = items as! Event
-//                unowned.append(newEvent)
-//            }
+    func parseUnowned(output: AWSTask) {
+        let tableRow = output.result as! AWSDynamoDBPaginatedOutput
+        
+        var response = tableRow.items
+
+            for (items) in tableRow.items {
+                var newEvent = items as! Event
+                unowned.append(newEvent)
+            }
         
         if unowned.isEmpty {
             //keep view hidden
@@ -384,12 +380,12 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
             stackviewHeightConstraint.constant = 0
             heightToAlertConstraint.constant = 5
         } else {
-            UIView.animateWithDuration(1, animations: {
+            UIView.animateWithDuration(3, animations: {
                 self.alertView.backgroundColor = UIColor.clearColor()
                 self.unownedAlertViewHeight.constant = 60
                 self.heightToAlertConstraint.constant = 5
+                self.stackviewHeightConstraint.constant = 60
             })
-            stackviewHeightConstraint.constant = 60
         }
     }
     
@@ -399,6 +395,7 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
         
         var response = tableRow.items
         
+        nextEvents.removeAll()
         if response.isEmpty {
             //is there anything in nextEvents dict?
         } else {
@@ -467,7 +464,7 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }))
         self.presentViewController(alertController, animated: true, completion: nil)
-
+        alertController.view.tintColor = UIColor.synchronyGreen()
     }
     
 }

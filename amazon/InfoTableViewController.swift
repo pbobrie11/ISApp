@@ -30,6 +30,9 @@ class InfoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 80
+        
         super.viewDidLoad()
         
         setView()
@@ -54,7 +57,6 @@ class InfoTableViewController: UITableViewController {
         let findY = ((self.view.frame.size.height-400) / 2)
         
         infoView.frame = CGRect(x: 20, y: findY, width: self.view.frame.size.width-40, height: 200)
-        infoView.backgroundColor = UIColor.lightGrayColor()
         self.navigationController?.view.insertSubview(infoView, belowSubview: (self.navigationController?.navigationBar)!)
         
         
@@ -123,14 +125,9 @@ class InfoTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! InfoTableViewCell
         
-        for specInfo in info {
-            
-            let infoCell = info[indexPath.row]
-            
-            cell.lblHeader.text = infoCell.header
-        }
-        
-        
+        let specInfo = info[indexPath.row]
+        cell.lblHeader.text = specInfo.header
+        cell.lblBody.text = specInfo.details
         
         
         // Configure the cell...
@@ -144,7 +141,7 @@ class InfoTableViewController: UITableViewController {
         var header = info[row].header
         var body = info[row].details
         
-        toggleView(header, body: body)
+        //toggleView(header, body: body)
     }
     
     func toggleView(header: String, body: String) {
@@ -218,9 +215,9 @@ class InfoTableViewController: UITableViewController {
         
         
         if info.isEmpty {
-            self.title = "No Info"
+            self.title = "NO INFO"
         } else {
-            self.title = "Innovation Station Information"
+            self.title = "INNOVATION STATION INFORMATION"
         }
         
         //hide activity indicator
@@ -383,11 +380,20 @@ class InfoTableViewController: UITableViewController {
             retrieveObject()
         }
         
-        
+        self.tableView.reloadData()
     }
     
     @IBAction func unwindToEventsTable(segue: UIStoryboardSegue) {
         
     }
 
+}
+
+extension String {
+    func heightWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: CGFloat.max)
+        let boundBox = self.boundingRectWithSize(constraintRect, options: .UsesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        
+        return boundBox.height
+    }
 }

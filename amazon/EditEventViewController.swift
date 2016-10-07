@@ -9,7 +9,7 @@
 import UIKit
 import AWSDynamoDB
 
-class EditEventViewController: UIViewController {
+class EditEventViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     var oldEvent = Event()
     
@@ -34,7 +34,16 @@ class EditEventViewController: UIViewController {
     
     @IBOutlet weak var coownerField: UITextField!
     
-    @IBOutlet weak var detailField: UITextView!
+    @IBOutlet weak var detailField: UITextField!
+    
+    @IBOutlet weak var unknownField: UITextField!
+    
+    //constraints
+    @IBOutlet weak var topicHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topiclblHeightConstraint: NSLayoutConstraint!
+    
+    //scrollview
+    @IBOutlet weak var scrollView: UIScrollView!
     
     //Button
     @IBOutlet weak var btnSubmit: UIButton!
@@ -42,19 +51,29 @@ class EditEventViewController: UIViewController {
     //label for unknown which shifts to topic / host / guest
     @IBOutlet weak var lblUnknown: UILabel!
     
+    var activeField: UITextField?
+    var activeTextView: UITextView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        registerForKeyboardNotifications()
+        
+        self.eventField.delegate = self
+        self.strDateField.delegate = self
+        self.strTimeField.delegate = self
+        self.endDateField.delegate = self
+        self.endTimeField.delegate = self
+        self.ownerField.delegate = self
+        self.coownerField.delegate = self
+        self.unknownField.delegate = self
+        self.detailField.delegate = self
 
         setLabels()
         
         self.title = "Edit Event"
         
         btnSubmit.addTarget(self, action: #selector(EditEventViewController.setSave), forControlEvents: .TouchUpInside)
-        
-        // Do any additional setup after loading the view.
-        
     
     }
 
@@ -64,6 +83,10 @@ class EditEventViewController: UIViewController {
     }
     
     func setLabels() {
+        //button style
+        btnSubmit.layer.cornerRadius = 10
+        
+        
         eventField.text = oldEvent.event
         strDateField.text = dynamo.unixToDateFormat(oldEvent.startDate)
         endDateField.text = dynamo.unixToDateFormat(oldEvent.endDate)
@@ -74,6 +97,23 @@ class EditEventViewController: UIViewController {
             oldEvent.coOwner = ""
         } else {
             coownerField.text = oldEvent.coOwner
+        }
+        
+        let title = eventField.text!
+        switch title {
+        case "Hackathon":
+            lblUnknown.text = "Topic"
+        case "Bolt Session":
+            lblUnknown.text = "Topic"
+        case "IS Tour":
+            lblUnknown.text = "Guest"
+        case "Bagel Monday":
+            topicHeightConstraint.constant = 0
+            topiclblHeightConstraint.constant = 0
+        case "Volunteering Event":
+            lblUnknown.text = "Partner"
+        default:
+            break
         }
     }
     
@@ -104,6 +144,16 @@ class EditEventViewController: UIViewController {
         updateEvent.endDate = amazon.dateStringToUnix(endString!)
         updateEvent.leader = ownerField.text!
         updateEvent.details = detailField.text!
+        if coownerField.text == "" {
+            updateEvent.coOwner = "none"
+        } else {
+            updateEvent.coOwner = coownerField.text!
+        }
+        if unknownField.text == "" {
+            updateEvent.topic = "none"
+        } else {
+            updateEvent.topic = unknownField.text!
+        }
 
         if coownerField.text?.characters.count != 0 {
             updateEvent.coOwner = coownerField.text!
@@ -177,7 +227,85 @@ class EditEventViewController: UIViewController {
         })
         
     }
-
+    
+    func registerForKeyboardNotifications()
+    {
+        //Adding notifies on keyboard appearing
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillBeHidden:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    
+    func deregisterFromKeyboardNotifications()
+    {
+        //Removing notifies on keyboard appearing
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardWasShown(notification: NSNotification)
+    {
+        //Need to calculate keyboard exact size due to Apple suggestions
+        self.scrollView.scrollEnabled = true
+        var info : NSDictionary = notification.userInfo!
+        var keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
+        var contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
+        
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        
+        var aRect : CGRect = self.view.frame
+        aRect.size.height -= keyboardSize!.height
+        
+        if let activeFieldPresent = activeField
+        {
+            if (!CGRectContainsPoint(aRect, activeField!.frame.origin))
+            {
+                self.scrollView.scrollRectToVisible(activeField!.frame, animated: true)
+            }
+        }
+        
+    }
+    
+    
+    func keyboardWillBeHidden(notification: NSNotification)
+    {
+        //Once keyboard disappears, restore original positions
+        var info : NSDictionary = notification.userInfo!
+        var keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue().size
+        var contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
+        self.scrollView.contentInset = contentInsets
+        self.scrollView.scrollIndicatorInsets = contentInsets
+        self.view.endEditing(true)
+        self.scrollView.scrollEnabled = false
+        
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField!)
+    {
+        activeField = textField
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField!)
+    {
+        activeField = nil
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        activeTextView = nil
+    }
+    
+    func textViewDidBeginEditing(textView: UITextView) {
+        activeTextView = textView
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool // called when 'return' key pressed. return false to ignore.
+    {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
     /*
     // MARK: - Navigation
 

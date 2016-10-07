@@ -33,6 +33,7 @@ class EventsTableViewController: UITableViewController {
         
         //set EDIT functionality with navigation bar button on Right of nav bar
         navigationItem.rightBarButtonItem = editButtonItem()
+        
     
         //sets the title by taking the search terms and making it plural
         if events.isEmpty {

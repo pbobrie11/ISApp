@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AWSCore/AWSCore.framework"
   install_framework "$BUILT_PRODUCTS_DIR/AWSDynamoDB/AWSDynamoDB.framework"
   install_framework "$BUILT_PRODUCTS_DIR/AWSLambda/AWSLambda.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/XLForm/XLForm.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AWSCognito/AWSCognito.framework"
@@ -96,4 +97,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AWSCore/AWSCore.framework"
   install_framework "$BUILT_PRODUCTS_DIR/AWSDynamoDB/AWSDynamoDB.framework"
   install_framework "$BUILT_PRODUCTS_DIR/AWSLambda/AWSLambda.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/XLForm/XLForm.framework"
 fi

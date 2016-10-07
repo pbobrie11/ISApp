@@ -14,6 +14,7 @@ class TabHomepageViewController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.tabBar.tintColor = UIColor.synchronyGreen()
     }
 
     override func didReceiveMemoryWarning() {

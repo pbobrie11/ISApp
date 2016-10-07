@@ -18,6 +18,8 @@ class unownedTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        btnSignUp.tintColor = UIColor.synchronyGreen()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

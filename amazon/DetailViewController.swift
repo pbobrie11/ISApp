@@ -38,6 +38,11 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set edit placeholders
+        var editView = xlViewController()
+        editView.oldEvent = detailEvent
+        
+        
         //navbar button color
         self.navigationController?.navigationBar.tintColor = UIColor.charcoalGray()
         
@@ -142,6 +147,10 @@ class DetailViewController: UIViewController {
         
     }
     
+    @IBAction func unwindToDetailFromEdit(segue: UIStoryboardSegue) {
+        
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -154,6 +163,10 @@ class DetailViewController: UIViewController {
             var next = segue.destinationViewController as! UINavigationController
             let nextView = next.topViewController as! AddReminderViewController
             nextView.event = detailEvent
+        } else if segue.identifier == "crispyForm" {
+            var next = segue.destinationViewController as! customNavigationController
+            let nextView = next.topViewController as! xlViewController
+            nextView.oldEvent = detailEvent
         }
     }
     

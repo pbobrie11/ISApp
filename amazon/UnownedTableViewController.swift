@@ -47,8 +47,9 @@ class UnownedTableViewController: UITableViewController {
         let cellIdentifier = "unownedTableViewCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! unownedTableViewCell
-
-        for event in unownedArray {
+        
+        let event = unownedArray[indexPath.row]
+        
             cell.lblEventTitle.text = event.event
             var startString = event.startDate
             var dateString = amazonDb().unixToDateFormat(startString)
@@ -57,7 +58,8 @@ class UnownedTableViewController: UITableViewController {
             var dateNumber = dateNum[0]
             cell.lblDay.text = dateNumber
             cell.lblMonth.text = stringArr[0].uppercaseString
-        }
+            cell.btnSignUp.tag = indexPath.row
+            cell.btnSignUp.addTarget(self, action: "signUpClicked:", forControlEvents: .TouchUpInside)
         
         return cell
     }
@@ -65,7 +67,66 @@ class UnownedTableViewController: UITableViewController {
     func handleSegue() {
         
     }
+    
+    func signUpClicked (sender: UIButton) {
+        let defaults = NSUserDefaults()
+        var path = sender.tag
+        var choiceEvent = unownedArray[path]
+        if let name = defaults.objectForKey("username") {
+            choiceEvent.leader = name as! String
+            saveObject(choiceEvent)
+        } else {
+            askForName()
+        }
+    }
+    
+    func askForName() {
+        let defaults = NSUserDefaults()
+        let alertController = UIAlertController(title: "Please enter your name", message: "", preferredStyle: .Alert)
+        alertController.addTextFieldWithConfigurationHandler { (textField: UITextField!) -> Void in
+            textField.placeholder = "Enter Full Name"
+        }
+        alertController.addAction(UIAlertAction(title: "Done", style: .Default, handler: {
+            alert -> Void in
+            
+            let nameTextField = alertController.textFields![0] as UITextField
+            if let nameValue = nameTextField.text {
+                defaults.setObject(nameValue, forKey: "username")
+            }
+        }))
+        self.presentViewController(alertController, animated: true, completion: nil)
+        alertController.view.tintColor = UIColor.synchronyGreen()
+    }
 
+    func saveObject (event : Event) {
+        
+        dynamoDBObjectMapper.save(event) .continueWithExecutor(AWSExecutor.mainThreadExecutor(), withBlock: { (task:AWSTask!) -> AnyObject! in
+            if ((task.error) != nil) {
+                
+                let errorAlert = UIAlertController(title: "Error!", message: "There was an error adding this event. The event was not saved successfully", preferredStyle: .Alert)
+                errorAlert.addAction(UIAlertAction(title: "Done", style: .Default, handler: nil))
+                self.presentViewController(errorAlert, animated: true, completion: nil)
+                
+            }
+            if ((task.exception) != nil) {
+                let exception = task.exception as? String
+                print("Request \n Failed \n Exception is: \n" + exception!)
+            }
+            if ((task.result) != nil) {
+                
+                //send an alert to user to show that the information was saved successfully
+                let alert = UIAlertController(title: "Success!", message: "Your event has been saved successfully", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "Done", style: .Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+            }
+            return nil
+        })
+       //segue out
+        performSegueWithIdentifier("segueToHomeTabController", sender: self)
+    }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

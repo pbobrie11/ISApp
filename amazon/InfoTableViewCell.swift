@@ -11,6 +11,7 @@ import UIKit
 class InfoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblHeader: UILabel!
+    @IBOutlet weak var lblBody: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +22,18 @@ class InfoTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         self.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        self.lblHeader.numberOfLines = 0
+        self.lblHeader.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        
+        self.lblBody.numberOfLines = 0
+        self.lblBody.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        
+        
+        lblHeader.textColor = UIColor.synchronyGreen()
+        lblBody.textColor = UIColor.charcoalGray()
+        
+        lblBody.font = UIFont(name: "Avenir Next", size: 17)
 
         // Configure the view for the selected state
     }
