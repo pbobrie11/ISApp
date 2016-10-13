@@ -19,6 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        //navigation bar styling and attributes
+        
+        let navigationBarAppearace = UINavigationBar.appearance()
+        
+        navigationBarAppearace.tintColor = UIColor.synchronyGreen()
+        
+        // change navigation item title color
+        navigationBarAppearace.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!]
+        
         // Override point for customization after application launch.
         
         let credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1,
@@ -36,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let syncClient = AWSCognito.defaultCognito()
         
         // Create a record in a dataset and synchronize with the server
-        var dataset = syncClient.openOrCreateDataset("myDataset")
+        let dataset = syncClient.openOrCreateDataset("myDataset")
         dataset.setString("myValue", forKey:"myKey")
         dataset.synchronize().continueWithBlock {(task: AWSTask!) -> AnyObject! in
             // Your handler code here

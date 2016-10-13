@@ -18,8 +18,7 @@ class EditEventViewController: UIViewController, UITextFieldDelegate, UITextView
     let dynamo = amazonDb()
     
     
-    //textFields
-    
+    // all textFields
     @IBOutlet weak var eventField: UITextField!
     
     @IBOutlet weak var strDateField: UITextField!
@@ -57,8 +56,10 @@ class EditEventViewController: UIViewController, UITextFieldDelegate, UITextView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //lets you know when keyboard is interacted with
         registerForKeyboardNotifications()
         
+        //field delegates for editing purposes
         self.eventField.delegate = self
         self.strDateField.delegate = self
         self.strTimeField.delegate = self
@@ -117,6 +118,7 @@ class EditEventViewController: UIViewController, UITextFieldDelegate, UITextView
         }
     }
     
+    //validates whether needed fields are completed
     func validateFields(){
         //check the fields for some text. if no text then display a validation error message. Otherwise send the information through for saving
         
@@ -139,6 +141,7 @@ class EditEventViewController: UIViewController, UITextFieldDelegate, UITextView
         let startString = strDateField.text
         let endString = endDateField.text
         
+        //setting new event details, while converting date to unixtime
         updateEvent.event = eventField.text!
         updateEvent.startDate = amazon.dateStringToUnix(startString!)
         updateEvent.endDate = amazon.dateStringToUnix(endString!)
@@ -197,7 +200,7 @@ class EditEventViewController: UIViewController, UITextFieldDelegate, UITextView
             return nil
         })
         
-        //determine whether or not a record needs to be deleted
+        //determine whether or not a record needs to be deleted. if the 'edit' to the event involves changing the date or type of event, then there won't be an overwrite of the existing record because you can't change the PK or global key. So, the last event needs to be deleted
         if updateEvent.event != oldEvent.event || updateEvent.startDate != oldEvent.startDate {
             //delete old row with start time from old event and event title from old event
             

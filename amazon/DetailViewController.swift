@@ -164,7 +164,7 @@ class DetailViewController: UIViewController {
             let nextView = next.topViewController as! AddReminderViewController
             nextView.event = detailEvent
         } else if segue.identifier == "crispyForm" {
-            var next = segue.destinationViewController as! customNavigationController
+            var next = segue.destinationViewController as! UINavigationController
             let nextView = next.topViewController as! xlViewController
             nextView.oldEvent = detailEvent
         }

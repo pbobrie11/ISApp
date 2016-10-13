@@ -32,6 +32,7 @@ class InfoTableViewController: UITableViewController {
         
         navigationController?.navigationItem.setHidesBackButton(true, animated: true)
         
+        //this gives the ability to resize based on the content within the tableview cell
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
         
@@ -42,7 +43,7 @@ class InfoTableViewController: UITableViewController {
         
         self.navigationItem.hidesBackButton = false
         
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "handleTap:"))
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(InfoTableViewController.handleTap(_:))))
         
     }
     
@@ -79,11 +80,11 @@ class InfoTableViewController: UITableViewController {
         infoView.addSubview(bodyLabel)
         
         //adding close button
-        var xPos = (((infoView.frame.size.width)/2)-2.5)
+        let xPos = (((infoView.frame.size.width)/2)-2.5)
         closeButton.frame = CGRectMake(xPos, 160, infoView.frame.size.width-40, 30)
         closeButton.titleLabel?.textAlignment = .Center
         closeButton.setTitle("CLOSE", forState: UIControlState.Normal)
-        closeButton.addTarget(self, action: "dismissView", forControlEvents: .TouchUpInside)
+        closeButton.addTarget(self, action: #selector(InfoTableViewController.dismissView), forControlEvents: .TouchUpInside)
         infoView.addSubview(closeButton)
     }
     
@@ -139,24 +140,8 @@ class InfoTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
-        let row = indexPath.row
-        var header = info[row].header
-        var body = info[row].details
-        
-        //toggleView(header, body: body)
     }
     
-    func toggleView(header: String, body: String) {
-        if infoView.hidden == true {
-            headerLabel.text = header
-            bodyLabel.text = body
-            infoView.hidden = false
-            //transperentButton.hidden = false
-        } else {
-            infoView.hidden = true
-            //transperentButton.hidden = true
-        }
-    }
     
     func dismissView() {
         if infoView.hidden == false {

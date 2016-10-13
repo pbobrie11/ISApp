@@ -9,6 +9,8 @@
 import Foundation
 import AWSDynamoDB
 
+let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+
 class Event : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var tableName = "isEvents"
@@ -113,6 +115,7 @@ class myEvent: NSObject, NSCoding {
 
 class amazonDb {
     
+    //deleting records from database
     func deleteRow(toRemove: Event) {
         
         let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
@@ -128,6 +131,7 @@ class amazonDb {
         })
     }
     
+    //saving new events to db
     func saveRow(toAdd: Event, view: UIViewController) {
         dynamoDBObjectMapper.save(toAdd) .continueWithExecutor(AWSExecutor.mainThreadExecutor(), withBlock: { (task:AWSTask!) -> AnyObject! in
             if ((task.error) != nil) {
@@ -148,6 +152,7 @@ class amazonDb {
         })
     }
     
+    //pulling down
     func scanDb(expression: AWSDynamoDBScanExpression, view: UIViewController, type: String) {
         
         dynamoDBObjectMapper.scan(Event.self, expression: expression) .continueWithExecutor(AWSExecutor.mainThreadExecutor(), withBlock: { (task:AWSTask!) -> AnyObject! in
@@ -171,7 +176,7 @@ class amazonDb {
                 
                 //parse response.
                 if view.isKindOfClass(HomepageViewController) {
-                    var homepageInstance = HomepageViewController()
+                    let homepageInstance = HomepageViewController()
                     if type == "upcoming" {
                         homepageInstance.parseUpcoming(task)
                     } else {
@@ -208,11 +213,11 @@ class amazonDb {
         let defaults = NSUserDefaults()
         let myKey = "myEvents"
         var myReminder = [myEvent]()
-        var oldInfo = defaults.objectForKey(myKey) as! NSData
-        var oldInfoUnkeyed = NSKeyedUnarchiver.unarchiveObjectWithData(oldInfo) as! NSArray
+        let oldInfo = defaults.objectForKey(myKey) as! NSData
+        let oldInfoUnkeyed = NSKeyedUnarchiver.unarchiveObjectWithData(oldInfo) as! NSArray
         
         for entry in oldInfoUnkeyed {
-            var newInfo = entry as! myEvent
+            let newInfo = entry as! myEvent
             myReminder.append(newInfo)
         }
         myReminder.append(event)
@@ -225,12 +230,11 @@ class amazonDb {
         let defaults = NSUserDefaults()
         let myKey = "myEvents"
         var myReminder = [myEvent]()
-        var cleanDict : myEvent
-        var oldInfo = defaults.objectForKey(myKey) as! NSData
-        var oldInfoUnkeyed = NSKeyedUnarchiver.unarchiveObjectWithData(oldInfo) as! NSArray
+        let oldInfo = defaults.objectForKey(myKey) as! NSData
+        let oldInfoUnkeyed = NSKeyedUnarchiver.unarchiveObjectWithData(oldInfo) as! NSArray
         
         for entry in oldInfoUnkeyed {
-            var newInfo = entry as! myEvent
+            let newInfo = entry as! myEvent
             if newInfo.startDate < getCurrentUnixTime() {
                 //do nothing
             } else {
@@ -258,10 +262,10 @@ class amazonDb {
         let dateComponents = NSDateComponents()
         dateComponents.day = 8
         
-        var theCalendar = NSCalendar.currentCalendar()
-        var nextDate = theCalendar.dateByAddingComponents(dateComponents, toDate: startDate, options: .MatchFirst)
+        let theCalendar = NSCalendar.currentCalendar()
+        let nextDate = theCalendar.dateByAddingComponents(dateComponents, toDate: startDate, options: .MatchFirst)
         
-        var unixFuture = nextDate?.timeIntervalSince1970
+        let unixFuture = nextDate?.timeIntervalSince1970
         
         return unixFuture!
     }
@@ -312,7 +316,7 @@ class amazonDb {
     }
 
     func convertEventToMyEvent(event: Event, date: NSDate) -> myEvent {
-        var newEvent = myEvent(event: event.event, startDate: event.startDate, endDate: event.endDate, leader: event.leader, details: event.details, coOwner: event.coOwner, topic: event.topic, eventDate: date)
+        let newEvent = myEvent(event: event.event, startDate: event.startDate, endDate: event.endDate, leader: event.leader, details: event.details, coOwner: event.coOwner, topic: event.topic, eventDate: date)
         
         print(newEvent)
         return newEvent!
