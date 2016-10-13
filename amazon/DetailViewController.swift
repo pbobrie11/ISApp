@@ -157,8 +157,8 @@ class DetailViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "showEdit" {
-        var nextView = segue.destinationViewController as! EditEventViewController
-        nextView.oldEvent = detailEvent
+        //
+        //
         } else if segue.identifier == "showReminder" {
             var next = segue.destinationViewController as! UINavigationController
             let nextView = next.topViewController as! AddReminderViewController
