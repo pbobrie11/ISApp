@@ -122,6 +122,29 @@ class UnownedTableViewController: UITableViewController {
             }
             return nil
         })
+        //save first
+        let defaults = NSUserDefaults()
+        let dynamo = amazonDb()
+        let myKey = "myEvents"
+        
+        let eventStartInDateFormat = amazonDb().unixToNSDate(event.startDate)
+        
+        //set reminder to be added
+        let newReminder = amazonDb().convertEventToMyEvent(event, date: eventStartInDateFormat)
+        
+        
+        var existingDict = defaults.objectForKey(myKey)
+        
+        //check for existing array in defaults containing any reminders created in the past
+        if existingDict != nil {
+            //unpack and repack array for reminders and favorites
+            dynamo.unpackAndResaveEvent(newReminder)
+            print(existingDict)
+        } else {
+            dynamo.addNewEvent(newReminder)
+        }
+
+        
        //segue out
         performSegueWithIdentifier("segueToHomeTabController", sender: self)
     }

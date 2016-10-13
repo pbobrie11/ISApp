@@ -55,6 +55,8 @@ class pullObjectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationController?.navigationItem.setHidesBackButton(true, animated: true)
+        
         //set view color
         topLineView.backgroundColor = UIColor.synchronyGold()
         bottomLineView.backgroundColor = UIColor.synchronyGold()
@@ -99,6 +101,10 @@ class pullObjectViewController: UIViewController, UIPickerViewDelegate, UIPicker
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     func hideAllOptionObjects() {

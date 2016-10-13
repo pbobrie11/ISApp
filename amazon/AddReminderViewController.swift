@@ -40,13 +40,6 @@ class AddReminderViewController: UIViewController {
         
         let defaults = NSUserDefaults()
         
-        var fakeEvent = Event()
-        fakeEvent.startDate = 1474621200
-        fakeEvent.event = "Hackathon"
-        fakeEvent.endDate = 1475317800
-        fakeEvent.details = "computers n stuff"
-        fakeEvent.leader = "Dan"
-        event = fakeEvent
         let amazon = amazonDb()
         let date = amazon.getCurrentUnixTime()
         let dateString = amazon.unixToDateFormat(date)

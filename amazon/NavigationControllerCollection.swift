@@ -71,3 +71,27 @@ class signNavController : UINavigationController {
         self.view.tintColor = UIColor.synchronyGreen()
     }
 }
+
+class searchTableNavController : UINavigationController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!]
+        self.view.tintColor = UIColor.synchronyGreen()
+    }
+}
+
+class detailEventNavController : UINavigationController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!]
+        self.view.tintColor = UIColor.synchronyGreen()
+    }
+}
+
+class setReminderNavController : UINavigationController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!]
+        self.view.tintColor = UIColor.synchronyGreen()
+    }
+}

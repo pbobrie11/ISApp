@@ -50,10 +50,16 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
     var hasLoaded : Bool = false
     let myKey = "myEvents"
     let defaults = NSUserDefaults()
+    
     let halfScreen = (UIScreen.mainScreen().bounds.width) / 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationItem.setHidesBackButton(true, animated: true)
+        
+        eventsAndRemindersTableView.allowsSelection = false
+        upcomingTableView.allowsSelection = false
         
         alertView.backgroundColor = UIColor.clearColor()
         checkPhoneModel()
@@ -285,9 +291,11 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
     func checkTime() {
         let amazon = amazonDb()
         let date = NSDate()
+        let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let midnightDate = cal.startOfDayForDate(date)
         
-        let currentUnix = amazon.getCurrentUnixTime()
-        let futureUnix = amazon.getWeekFromNowUnixTime(date)
+        let currentUnix = amazon.dateToUnix(midnightDate)
+        let futureUnix = amazon.getWeekFromNowUnixTime(midnightDate)
         
         retrieveUpcomingObject(currentUnix, end: futureUnix)
     }
@@ -435,7 +443,7 @@ class HomepageViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewWillDisappear(animated: Bool)
     {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBarHidden = false
+        navigationController?.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     override func viewWillAppear(animated: Bool) {

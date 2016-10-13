@@ -30,8 +30,10 @@ class InfoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         
+        navigationController?.navigationItem.setHidesBackButton(true, animated: true)
+        
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 80
+        tableView.estimatedRowHeight = 120
         
         super.viewDidLoad()
         
@@ -217,7 +219,7 @@ class InfoTableViewController: UITableViewController {
         if info.isEmpty {
             self.title = "NO INFO"
         } else {
-            self.title = "INNOVATION STATION INFORMATION"
+            self.title = "IS INFORMATION"
         }
         
         //hide activity indicator
@@ -348,6 +350,9 @@ class InfoTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        
+        navigationController?.navigationItem.setHidesBackButton(true, animated: true)
         
          clearTable()
         

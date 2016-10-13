@@ -98,9 +98,15 @@ class xlAddNewViewController: XLFormViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        navigationController?.navigationItem.setHidesBackButton(true, animated: true)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "savePressed:")
         
         self.title = "ADD NEW EVENT"
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        navigationController?.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     func cancelPressed(button: UIBarButtonItem) {
@@ -162,7 +168,7 @@ class xlAddNewViewController: XLFormViewController {
             newEvent.topic = "none"
         }
         
-        //     saveObject(newEvent)
+        saveObject(newEvent)
         
     }
     
@@ -191,9 +197,6 @@ class xlAddNewViewController: XLFormViewController {
             return nil
         })
         
-    
-        
-        performSegueWithIdentifier("unwindToDetailFromEdit", sender: self)
     }
     
     

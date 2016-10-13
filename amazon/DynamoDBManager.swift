@@ -256,7 +256,7 @@ class amazonDb {
     
     func getWeekFromNowUnixTime(startDate: NSDate) -> Double {
         let dateComponents = NSDateComponents()
-        dateComponents.day = 7
+        dateComponents.day = 8
         
         var theCalendar = NSCalendar.currentCalendar()
         var nextDate = theCalendar.dateByAddingComponents(dateComponents, toDate: startDate, options: .MatchFirst)
